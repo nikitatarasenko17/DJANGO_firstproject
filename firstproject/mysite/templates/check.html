@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if article_number|divisibleby:"2" %}
+        <h1>Четный</h1>
+    {% else %}
+        <h1>Нечетный</h1>
+    {% endif %}
+
+    {% if slug_text %}
+    <h1>Привет слаг!</h1>
+    {% endif %}
+
+{% endblock %}    

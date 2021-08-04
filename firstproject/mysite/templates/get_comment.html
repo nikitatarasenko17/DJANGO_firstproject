@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="get">
+    {{ form }}
+    <input type="submit" value="Search">
+    {% if result %}
+        {% for comment in result %}
+        <p>{{ comment }}</p>
+        <br>
+        {% endfor %}
+    {% else %}
+        <p>No comments found</p>
+    {% endif %}
+    {% csrf_token %}
+    </form>
+{% endblock %}

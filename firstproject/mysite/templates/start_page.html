@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load random %}
+{% block content %}
+    {% random_int 1000 as rand_int %}
+    <button type="button" class="btn btn-warning"><a href="{% url 'article_num' rand_int %}">Случайная статья</a></button><br>
+    {% random_slug as rand_slug %}
+    <div class="p-3 border bg-light"></div>
+    <button type="button" class="btn btn-warning" ><a href="{% url 'article_num' rand_int rand_slug %}">Случайная статья co слагом</a></button><br>
+
+  {% endblock %}
